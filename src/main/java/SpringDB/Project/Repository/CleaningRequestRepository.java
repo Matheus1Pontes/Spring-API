@@ -7,4 +7,6 @@ import SpringDB.Project.model.enums.RequestStatus;
 
 public interface CleaningRequestRepository extends JpaRepository<CleaningRequest, Integer> {
     List<CleaningRequest> findByStatus(RequestStatus status);
+
+    List<CleaningRequest> findByCustomer_Id(Integer customerId);
 }

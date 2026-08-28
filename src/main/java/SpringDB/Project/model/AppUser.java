@@ -55,6 +55,9 @@ public class AppUser {
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
     List<Address> addresses = new ArrayList<>();
 
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
+    List<CleaningRequest> request = new ArrayList<>();
+
     public Integer getId() {
         return id;
     }
@@ -142,5 +145,13 @@ public class AppUser {
 
     public void setAddress(List<Address> addresses) {
         this.addresses = addresses;
+    }
+
+    public List<CleaningRequest> getCleaningRequest() {
+        return request;
+    }
+
+    public void setCleaningRequest(List<CleaningRequest> request) {
+        this.request = request;
     }
 }
